@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="1" height="20" alignment="left" text="Is it a cat?" textAlignment="center" id="gj0-Ie-K5T"/>
+                        <label width="1" height="20" alignment="left" text="Is this a cat?" textAlignment="center" id="gj0-Ie-K5T"/>
                         <label width="1" height="1" heightAdjustment="-50" alignment="left" hidden="YES" textAlignment="center" numberOfLines="0" minimumScaleFactor="0.99999999999999989" id="bqe-nh-Oqs">
                             <string key="text">No images
 left to classify!</string>
@@ -18,13 +18,13 @@ left to classify!</string>
                         <imageView width="1" height="1" heightAdjustment="-50" alignment="left" contentMode="scaleAspectFit" id="Scv-6O-yrE"/>
                         <group width="1" alignment="left" id="hQX-Ga-nrb">
                             <items>
-                                <button width="0.50000000000000011" height="30" alignment="left" title="•" id="c3j-1b-00f">
+                                <button width="0.50000000000000011" height="30" alignment="left" title="👎" id="c3j-1b-00f">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="falseClicked" destination="AgC-eL-Hgc" id="LrM-9z-YNE"/>
                                     </connections>
                                 </button>
-                                <button width="0.50000000000000011" height="30" alignment="left" title="•" id="bb4-zT-FM1">
+                                <button width="0.50000000000000011" height="30" alignment="left" title="😸" id="bb4-zT-FM1">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="trueClicked" destination="AgC-eL-Hgc" id="Er2-iA-QJR"/>

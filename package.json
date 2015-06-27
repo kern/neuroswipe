@@ -9,9 +9,11 @@
   "author": "Alex Kern <alex@kern.io>",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "aws-sdk": "^2.1.36",
     "body-parser": "^1.13.1",
     "express": "^4.13.0",
     "firebase": "^2.2.7",
-    "morgan": "^1.6.0"
+    "morgan": "^1.6.0",
+    "request": "^2.58.0"
   }
 }

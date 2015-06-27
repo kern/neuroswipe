@@ -1,17 +1,23 @@
+var AWS = require('aws-sdk')
 var Firebase = require('firebase')
 var bodyParser = require('body-parser')
 var express = require('express')
 var fs = require('fs')
 var morgan = require('morgan')
+var request = require('request')
 
 var db = new Firebase('https://neuroswipe.firebaseio.com/')
-
 var unclassifiedImages = {}
 var classifiedImages = {}
 
-fs.readdir(__dirname + '/images', function (err, files) {
-  for (var f of files) {
-    var id = f.replace(/\.[^.$]+$/, '')
+var s3 = new AWS.S3({
+  "accessKeyId": "AKIAI2WCPTSIGTT75ZQQ",
+  "secretAccessKey": "XAHPH66VVuZsdVrQotIj8A/TgIfYyJESAYMDYSrT"
+})
+
+s3.listObjects({ Bucket: 'neuroswipe' }, function (err, data) {
+  for (var f of data.Contents) {
+    var id = f.Key.replace(/\.[^.$]+$/, '')
     unclassifiedImages[id] = null
   }
 
@@ -43,7 +49,9 @@ app.get('/new', function (req, res) {
   var imageID = pickRandomProperty(unclassifiedImages)
   if (imageID) {
     res.setHeader('X-Image-ID', imageID)
-    res.sendFile(__dirname + '/images/' + imageID + '.jpg')
+    request
+      .get('http://neuroswipe.s3-us-west-2.amazonaws.com/' + imageID + '.jpg')
+      .pipe(res)
   } else {
     res.status(404).end()
   }
