@@ -40,7 +40,7 @@
 }
 
 - (void)classify:(BOOL)answer {
-    NSURL *url = [NSURL URLWithString: @"http://localhost:3000/classify"];
+    NSURL *url = [NSURL URLWithString: @"http://neuroswipe.herokuapp.com/classify"];
     
     NSString *id = _imageID;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -60,7 +60,7 @@
     [_falseButton setEnabled:NO];
     [_trueButton setEnabled:NO];
     
-    NSURL *url = [NSURL URLWithString: @"http://localhost:3000/new"];
+    NSURL *url = [NSURL URLWithString: @"http://neuroswipe.herokuapp.com/new"];
     
     NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession] downloadTaskWithURL:url completionHandler:^(NSURL *location,  NSURLResponse *response, NSError *error) {
         UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];

@@ -10,7 +10,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="1" height="20" alignment="left" text="Is this a cat?" textAlignment="center" id="gj0-Ie-K5T"/>
+                        <label width="1" height="20" alignment="left" text="Is there a cat?" textAlignment="center" id="gj0-Ie-K5T"/>
                         <label width="1" height="1" heightAdjustment="-50" alignment="left" hidden="YES" textAlignment="center" numberOfLines="0" minimumScaleFactor="0.99999999999999989" id="bqe-nh-Oqs">
                             <string key="text">No images
 left to classify!</string>
